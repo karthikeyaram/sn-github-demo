@@ -1,4 +1,3 @@
-
 name: ServiceNow Trigger Workflow
 
 on:
@@ -15,6 +14,8 @@ jobs:
 
     steps:
       - name: Print message
+        run: echo "Triggered from ServiceNow"
+
+      - name: Print environment
         run: |
-          echo "Triggered from ServiceNow"
           echo "Environment: ${{ github.event.inputs.env }}"

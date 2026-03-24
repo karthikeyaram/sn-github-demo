@@ -1,1 +1,20 @@
 
+name: ServiceNow Trigger Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: 'Environment Name'
+        required: true
+        default: 'dev'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: |
+          echo "Triggered from ServiceNow"
+          echo "Environment: ${{ github.event.inputs.env }}"
